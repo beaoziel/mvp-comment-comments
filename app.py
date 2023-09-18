@@ -28,9 +28,9 @@ def home():
 @app.post('/comment/new', tags=[comments_tag],
           responses={"200": CommentViewSchema, "409": ErrorSchema, "400": ErrorSchema})
 def add_comment(form: CommentSchema):
-    """Adiciona um novo Usuário à base de dados
+    """Adiciona um novo comentário à base de dados
 
-    Retorna uma representação dos usuários associados.
+    Retorna uma representação dos comentários associados.
     """
 
     session = Session()
@@ -77,7 +77,7 @@ def add_comment(form: CommentSchema):
 def get_all_comments():
     """Faz a busca por todos os comentários publicados
 
-    Retorna uma representação da listagem de usuários.
+    Retorna uma representação da listagem de comentários.
     """
     logger.debug(f"Coletando todos os usuários")
     # criando conexão com a base
@@ -87,7 +87,7 @@ def get_all_comments():
 
     if not comments:
         # se não há produtos cadastrados
-        return {"comentários": []}, 200
+        return {"comentários": []}, 204
     else:
         logger.debug(f"%d comentários econtrados" % len(comments))
         # retorna a representação de produto
@@ -98,7 +98,7 @@ def get_all_comments():
 @app.delete('/comment/delete', tags=[comments_tag],
             responses={"200": CommentDelSchema, "404": ErrorSchema})
 def del_comment(query: CommentTittleSearchSchema):
-    """Deleta um Usuário a partir do nome de produto informado
+    """Deleta um Comentário a partir do título informado
 
     Retorna uma mensagem de confirmação da remoção.
     """
@@ -121,32 +121,12 @@ def del_comment(query: CommentTittleSearchSchema):
         logger.warning(f"Erro ao deletar comentário #'{title}', {error_msg}")
         return {"mesage": error_msg}, 404
 
-#4 Pegar todos os comentários de um usuário específico
-@app.get('/comment/user', tags=[comments_tag],
-         responses={"200": CommentUserSearchSchema, "404": ErrorSchema})
-def get_comments_user(query: CommentSchema):
-    """Faz a busca por nome do usuário
-        Retorna uma representação de um comentario
-    """
-    user_id = unquote(unquote(query.user))
-    logger.debug(f"Coletando usuário {user_id}")
-    # criando conexão com a base
-    session = Session()
-    #Fazendo busca geral
-    stmt=(f'SELECT * FROM comments WHERE user = "{user_id}"')
-    comments_user = session.execute(stmt)
-
-    if comments_user:
-        return f"Nenhum comentário encontrado para o usuário {user_id}", 200
-    else:
-        return show_comments(comments_user), 200
-
-#5 Update no comentário
+#4 Update no comentário
 @app.put('/comment/update', tags=[comments_tag],
             responses={"200": CommentSchema, "404": ErrorSchema})
 def update_comment(query: CommentTittleSearchSchema, form: CommentSchema):
     """
-    Faz update dos valores de um usuário
+    Faz update dos valores de um comentário
     """
     title = unquote(unquote(query.title))
     logger.debug(f"Coletando comentário {title}")
@@ -159,13 +139,12 @@ def update_comment(query: CommentTittleSearchSchema, form: CommentSchema):
 
     for c in comments:
         all_comments.append(c.title)
+    
+    all_comments.append(title)
 
     if not comment:
-        return "Nenhum comentário encointrado", 200
+        return "Nenhum comentário encontrado", 204
     else:
-         if form.title in all_comments:
-            return "Título já existente", 200
-         else:
             try:
                 comment.user = form.user
                 comment.title = form.title
@@ -180,3 +159,27 @@ def update_comment(query: CommentTittleSearchSchema, form: CommentSchema):
                 error_msg = "Não foi possível editar comentário :/"
                 logger.warning(f"Erro ao editar comentário, {error_msg}")
                 return {"mesage": error_msg}, 400
+
+#5 Pegar ID do comentrário
+@app.get('/comment/get', tags=[comments_tag],
+         responses={"200": CommentUserSearchSchema, "404": ErrorSchema})
+def get_comment_id(query: CommentIDSearchSchema):
+    """Faz a busca de um comentário pelo ID
+    """
+    id = unquote(unquote(str(query.id)))
+    logger.debug(f"Coletando usuário {id}")
+    # criando conexão com a base
+    session = Session()
+    #Fazendo busca geral
+    stmt=(f'SELECT * FROM comments WHERE pk_comment = {id}')
+    comment = session.execute(stmt)
+    
+    if not comment:
+        return "Nenhum comentário encontrado", 204
+    else:
+        try:
+            comment = session.query(Comments).filter(Comments.id == id).first()
+            print(comment)
+            return show_comment(comment), 200
+        except:
+            return "Erro ao tentar encontrar comentário", 204
