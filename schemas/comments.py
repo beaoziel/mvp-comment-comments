@@ -34,7 +34,7 @@ class ListCommentsSchema(BaseModel):
 
 def show_comments(comments: List[Comments]):
     """ Retorna uma representação do usuario seguindo o schema definido em
-        UserViewSchema.
+        CommentViewSchema.
     """
     result = []
     for c in comments:
@@ -62,15 +62,15 @@ class CommentUserDelSchema(BaseModel):
     user: int = 1
 
 class CommentViewSchema(BaseModel):
-    """ Define como um usuario será retornado: nome + comentários.
+    """ Define como um comentário será retornado: id + nome + título.
     """
     id: int = 1
     user: int = 1
     title: str = "Assunto"
 
 def show_comment(comment: Comments):
-    """ Retorna uma representação do usuario seguindo o schema definido em
-        ProdutoViewSchema.
+    """ Retorna uma representação do comentário seguindo o schema definido em
+        CommentSchema.
     """
     return {
         "user": comment.user,
@@ -79,8 +79,7 @@ def show_comment(comment: Comments):
         "text": comment.text
     }
 
-
 class CommentIDSearchSchema(BaseModel):
-    """ Define como um usuario será retornado: id + nome.
+    """ Define como um comentário será retornado: id
     """
     id: int = 1
