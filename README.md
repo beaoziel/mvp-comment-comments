@@ -39,7 +39,7 @@ Com o uso de containers, foi possível melhor gerenciar o desenvolvimento já qu
 
 ## 📁 Acesso ao projeto
 <p>
-  Para acessar, será necessário a inicialização dos componentes <i>Users</i> e <i>Comments</i>. Depois, baixe o código fonte do componente de front end e abra o html "index".
+  Para acessar, será necessário a inicialização dos componentes <a href='https://github.com/beaoziel/mvp-comment-users'> <i>Users</i> </a> e <a href='https://github.com/beaoziel/mvp-comment-comments'> <i>Comments</i> </a>. Depois, baixe o código fonte do componente de <a href='https://github.com/beaoziel/mvp-comment-front'><i> front end </i></a> e abra o html "index".
   Não é necessário iniciar o front-end, visto que o mesmo consome de outras APIs.
 </p>
 
