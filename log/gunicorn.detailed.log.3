@@ -1,0 +1,70 @@
+[2023-09-13 15:52:41,352] INFO _log() L224   * Running on all addresses (0.0.0.0)
+   WARNING: This is a development server. Do not use it in a production deployment.
+ * Running on http://127.0.0.1:5000
+ * Running on http://10.95.8.98:5000 (Press CTRL+C to quit) - call_trace=C:\Users\biaoz\PycharmProjects\18-paiting-project\venv\lib\site-packages\werkzeug\_internal.py L224 
+[2023-09-13 15:53:12,805] INFO _log() L224   * Running on all addresses (0.0.0.0)
+   WARNING: This is a development server. Do not use it in a production deployment.
+ * Running on http://127.0.0.1:5000
+ * Running on http://10.95.8.98:5000 (Press CTRL+C to quit) - call_trace=C:\Users\biaoz\PycharmProjects\18-paiting-project\venv\lib\site-packages\werkzeug\_internal.py L224 
+[2023-09-13 15:53:56,810] INFO _log() L224  127.0.0.1 - - [13/Sep/2023 15:53:56] "GET /comment/all HTTP/1.1" 200 - - call_trace=C:\Users\biaoz\PycharmProjects\18-paiting-project\venv\lib\site-packages\werkzeug\_internal.py L224 
+[2023-09-13 15:54:54,210] INFO _log() L224  127.0.0.1 - - [13/Sep/2023 15:54:54] "POST /comment/new HTTP/1.1" 200 - - call_trace=C:\Users\biaoz\PycharmProjects\18-paiting-project\venv\lib\site-packages\werkzeug\_internal.py L224 
+[2023-09-13 15:55:04,794] INFO _log() L224  127.0.0.1 - - [13/Sep/2023 15:55:04] "GET /comment/all HTTP/1.1" 200 - - call_trace=C:\Users\biaoz\PycharmProjects\18-paiting-project\venv\lib\site-packages\werkzeug\_internal.py L224 
+[2023-09-13 16:06:11,231] INFO _log() L224   * Running on all addresses (0.0.0.0)
+   WARNING: This is a development server. Do not use it in a production deployment.
+ * Running on http://127.0.0.1:5000
+ * Running on http://10.95.8.98:5000 (Press CTRL+C to quit) - call_trace=C:\Users\biaoz\PycharmProjects\18-paiting-project\venv\lib\site-packages\werkzeug\_internal.py L224 
+[2023-09-13 16:06:12,649] INFO _log() L224  127.0.0.1 - - [13/Sep/2023 16:06:12] "GET /comment/all HTTP/1.1" 200 - - call_trace=C:\Users\biaoz\PycharmProjects\18-paiting-project\venv\lib\site-packages\werkzeug\_internal.py L224 
+[2023-09-13 16:06:28,060] INFO _log() L224  127.0.0.1 - - [13/Sep/2023 16:06:28] "POST /comment/new HTTP/1.1" 200 - - call_trace=C:\Users\biaoz\PycharmProjects\18-paiting-project\venv\lib\site-packages\werkzeug\_internal.py L224 
+[2023-09-13 16:06:36,044] INFO _log() L224  127.0.0.1 - - [13/Sep/2023 16:06:36] "POST /comment/new HTTP/1.1" 200 - - call_trace=C:\Users\biaoz\PycharmProjects\18-paiting-project\venv\lib\site-packages\werkzeug\_internal.py L224 
+[2023-09-13 16:06:41,778] WARNING add_comment() L44   Erro ao adicionar comentário, Comentário de mesmo título já salvo na base :/ - call_trace=C:\Users\biaoz\OneDrive\Documentos\mvp-comment!\mvp-comment-comments\app.py L44  
+[2023-09-13 16:06:41,779] INFO _log() L224  127.0.0.1 - - [13/Sep/2023 16:06:41] "[31m[1mPOST /comment/new HTTP/1.1[0m" 409 - - call_trace=C:\Users\biaoz\PycharmProjects\18-paiting-project\venv\lib\site-packages\werkzeug\_internal.py L224 
+[2023-09-13 16:06:47,797] INFO _log() L224  127.0.0.1 - - [13/Sep/2023 16:06:47] "GET /comment/all HTTP/1.1" 200 - - call_trace=C:\Users\biaoz\PycharmProjects\18-paiting-project\venv\lib\site-packages\werkzeug\_internal.py L224 
+[2023-09-13 16:07:12,995] WARNING del_comment() L120  Erro ao deletar comentário #'Apenas um comentário 3', Título não encontrada na base :/ - call_trace=C:\Users\biaoz\OneDrive\Documentos\mvp-comment!\mvp-comment-comments\app.py L120 
+[2023-09-13 16:07:12,997] INFO _log() L224  127.0.0.1 - - [13/Sep/2023 16:07:12] "[33mDELETE /comment/delete?title=Apenas%20um%20comentário%203 HTTP/1.1[0m" 404 - - call_trace=C:\Users\biaoz\PycharmProjects\18-paiting-project\venv\lib\site-packages\werkzeug\_internal.py L224 
+[2023-09-13 16:07:25,778] ERROR log_exception() L1449 Exception on /comment/delete [DELETE] - call_trace=C:\Users\biaoz\PycharmProjects\18-paiting-project\venv\lib\site-packages\flask\app.py L1449
+Traceback (most recent call last):
+  File "C:\Users\biaoz\PycharmProjects\18-paiting-project\venv\lib\site-packages\flask\app.py", line 2073, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\biaoz\PycharmProjects\18-paiting-project\venv\lib\site-packages\flask\app.py", line 1519, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\biaoz\PycharmProjects\18-paiting-project\venv\lib\site-packages\flask_cors\extension.py", line 165, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "C:\Users\biaoz\PycharmProjects\18-paiting-project\venv\lib\site-packages\flask\app.py", line 1517, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\biaoz\PycharmProjects\18-paiting-project\venv\lib\site-packages\flask\app.py", line 1503, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+  File "C:\Users\biaoz\PycharmProjects\18-paiting-project\venv\lib\site-packages\flask_openapi3\scaffold.py", line 355, in wrapper
+    resp = _do_wrapper(
+  File "C:\Users\biaoz\PycharmProjects\18-paiting-project\venv\lib\site-packages\flask_openapi3\do_wrapper.py", line 135, in _do_wrapper
+    response = func(**request_kwargs)
+  File "C:\Users\biaoz\OneDrive\Documentos\mvp-comment!\mvp-comment-comments\app.py", line 116, in del_comment
+    return {"mesage": "Comentário deletado", "id": count.id}
+AttributeError: 'int' object has no attribute 'id'
+[2023-09-13 16:07:25,783] INFO _log() L224  127.0.0.1 - - [13/Sep/2023 16:07:25] "[35m[1mDELETE /comment/delete?title=Apenas%20um%20teste%203 HTTP/1.1[0m" 500 - - call_trace=C:\Users\biaoz\PycharmProjects\18-paiting-project\venv\lib\site-packages\werkzeug\_internal.py L224 
+[2023-09-13 16:12:39,170] INFO _log() L224   * Running on all addresses (0.0.0.0)
+   WARNING: This is a development server. Do not use it in a production deployment.
+ * Running on http://127.0.0.1:5000
+ * Running on http://10.95.8.98:5000 (Press CTRL+C to quit) - call_trace=C:\Users\biaoz\PycharmProjects\18-paiting-project\venv\lib\site-packages\werkzeug\_internal.py L224 
+[2023-09-13 16:12:41,384] WARNING del_comment() L120  Erro ao deletar comentário #'Apenas um teste 3', Título não encontrada na base :/ - call_trace=C:\Users\biaoz\OneDrive\Documentos\mvp-comment!\mvp-comment-comments\app.py L120 
+[2023-09-13 16:12:41,385] INFO _log() L224  127.0.0.1 - - [13/Sep/2023 16:12:41] "[33mDELETE /comment/delete?title=Apenas%20um%20teste%203 HTTP/1.1[0m" 404 - - call_trace=C:\Users\biaoz\PycharmProjects\18-paiting-project\venv\lib\site-packages\werkzeug\_internal.py L224 
+[2023-09-13 16:12:46,080] INFO _log() L224  127.0.0.1 - - [13/Sep/2023 16:12:46] "GET /comment/all HTTP/1.1" 200 - - call_trace=C:\Users\biaoz\PycharmProjects\18-paiting-project\venv\lib\site-packages\werkzeug\_internal.py L224 
+[2023-09-13 16:12:54,942] INFO _log() L224  127.0.0.1 - - [13/Sep/2023 16:12:54] "DELETE /comment/delete?title=Apenas%20um%20teste%202 HTTP/1.1" 200 - - call_trace=C:\Users\biaoz\PycharmProjects\18-paiting-project\venv\lib\site-packages\werkzeug\_internal.py L224 
+[2023-09-13 17:09:31,216] INFO _log() L224   * Running on all addresses (0.0.0.0)
+   WARNING: This is a development server. Do not use it in a production deployment.
+ * Running on http://127.0.0.1:5000
+ * Running on http://10.95.8.98:5000 (Press CTRL+C to quit) - call_trace=C:\Users\biaoz\PycharmProjects\18-paiting-project\venv\lib\site-packages\werkzeug\_internal.py L224 
+[2023-09-13 17:09:35,265] INFO _log() L224  127.0.0.1 - - [13/Sep/2023 17:09:35] "GET /comment/all HTTP/1.1" 200 - - call_trace=C:\Users\biaoz\PycharmProjects\18-paiting-project\venv\lib\site-packages\werkzeug\_internal.py L224 
+[2023-09-13 17:09:47,550] INFO _log() L224  127.0.0.1 - - [13/Sep/2023 17:09:47] "POST /comment/new HTTP/1.1" 200 - - call_trace=C:\Users\biaoz\PycharmProjects\18-paiting-project\venv\lib\site-packages\werkzeug\_internal.py L224 
+[2023-09-13 17:09:58,270] INFO _log() L224  127.0.0.1 - - [13/Sep/2023 17:09:58] "POST /comment/new HTTP/1.1" 200 - - call_trace=C:\Users\biaoz\PycharmProjects\18-paiting-project\venv\lib\site-packages\werkzeug\_internal.py L224 
+[2023-09-13 17:10:00,074] INFO _log() L224  127.0.0.1 - - [13/Sep/2023 17:10:00] "GET /comment/all HTTP/1.1" 200 - - call_trace=C:\Users\biaoz\PycharmProjects\18-paiting-project\venv\lib\site-packages\werkzeug\_internal.py L224 
+[2023-09-13 17:10:30,575] INFO _log() L224   * Running on all addresses (0.0.0.0)
+   WARNING: This is a development server. Do not use it in a production deployment.
+ * Running on http://127.0.0.1:5000
+ * Running on http://10.95.8.98:5000 (Press CTRL+C to quit) - call_trace=C:\Users\biaoz\PycharmProjects\18-paiting-project\venv\lib\site-packages\werkzeug\_internal.py L224 
+[2023-09-13 17:10:40,685] INFO _log() L224  127.0.0.1 - - [13/Sep/2023 17:10:40] "GET /comment/user?user=Flavia HTTP/1.1" 200 - - call_trace=C:\Users\biaoz\PycharmProjects\18-paiting-project\venv\lib\site-packages\werkzeug\_internal.py L224 
+[2023-09-13 17:13:20,937] INFO _log() L224   * Running on all addresses (0.0.0.0)
+   WARNING: This is a development server. Do not use it in a production deployment.
+ * Running on http://127.0.0.1:5000
+ * Running on http://10.95.8.98:5000 (Press CTRL+C to quit) - call_trace=C:\Users\biaoz\PycharmProjects\18-paiting-project\venv\lib\site-packages\werkzeug\_internal.py L224 
+[2023-09-13 17:13:26,919] INFO _log() L224  127.0.0.1 - - [13/Sep/2023 17:13:26] "GET /comment/user?user=Flavia HTTP/1.1" 200 - - call_trace=C:\Users\biaoz\PycharmProjects\18-paiting-project\venv\lib\site-packages\werkzeug\_internal.py L224 
+[2023-09-13 17:13:39,390] INFO _log() L224  127.0.0.1 - - [13/Sep/2023 17:13:39] "GET /comment/user?user=Maria HTTP/1.1" 200 - - call_trace=C:\Users\biaoz\PycharmProjects\18-paiting-project\venv\lib\site-packages\werkzeug\_internal.py L224 
